@@ -1,0 +1,14 @@
+{
+  "name": "storefront-<%= appName %>",
+  "version": "1.0.0",
+  "description": "Simple StoreFront implementation",
+  "main": "storefront.js",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "0.9.0"
+  }
+}
