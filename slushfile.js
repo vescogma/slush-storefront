@@ -20,6 +20,7 @@ var path = require('path');
 gulp.task('default', function (done) {
   var prompts = [{
     name: 'type',
+    type: 'list',
     message: 'What sort of StoreFront project would you like to create?',
     choices: ['simple']
   }, {
