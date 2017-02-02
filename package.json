@@ -5,7 +5,7 @@
   "homepage": "https://github.com/groupby/slush-storefront",
   "author": {
     "name": "Ben Teichman",
-    "email": "ben.l.teichman@gmail.com"
+    "email": "ben.teichman@groupbyinc.com"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
   "dependencies": {
     "gulp": "^3.6.2",
     "gulp-conflict": "^0.4.0",
+    "gulp-install": "^0.6.0",
     "gulp-rename": "^1.2.0",
     "gulp-template": "^4.0.0",
     "iniparser": "^1.0.5",
@@ -50,7 +51,6 @@
   "devDependencies": {
     "condition-circle": "^1.5.0",
     "cz-conventional-changelog": "^1.2.0",
-    "gulp-install": "^0.6.0",
     "re-start": "^1.1.0",
     "semantic-release": "^6.3.2",
     "semistandard": "^9.2.1",
