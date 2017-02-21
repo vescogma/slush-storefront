@@ -1,5 +1,7 @@
 searchandiser({
   customerId: '<%= customerId %>',
+  // collection: 'default',
+  // area: 'Production',
 
   structure: {
     title: 'title',

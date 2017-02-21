@@ -21,9 +21,8 @@
     "npm": ">=1.4.3"
   },
   "scripts": {
-    "start": "start-runner -f ./tasks.js",
-    "prepush": "yarn start prepush",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "start": "start-runner -p re-start/presets/es5",
+    "prepush": "yarn start prepush"
   },
   "release": {
     "verifyConditions": "condition-circle"
@@ -51,9 +50,9 @@
   "devDependencies": {
     "condition-circle": "^1.5.0",
     "cz-conventional-changelog": "^1.2.0",
-    "re-start": "^1.1.0",
-    "semantic-release": "^6.3.2",
-    "semistandard": "^9.2.1",
+    "eslint": "^3.16.0",
+    "eslint-config-tough": "^0.4.0",
+    "re-start": "^1.8.6",
     "start-simple-cli": "^4.1.1"
   }
 }
