@@ -22,7 +22,7 @@ gulp.task('default', function (done) {
     name: 'type',
     type: 'list',
     message: 'What sort of StoreFront project would you like to create?',
-    choices: ['simple']
+    choices: ['simple', 'webpack']
   }, {
     name: 'customerId',
     message: 'What is your customerId?'
