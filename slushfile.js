@@ -17,7 +17,7 @@ var _ = require('underscore.string');
 var inquirer = require('inquirer');
 var path = require('path');
 
-gulp.task('default', function (done) {
+gulp.task('default', function(done) {
   var prompts = [{
     name: 'type',
     type: 'list',
@@ -34,15 +34,15 @@ gulp.task('default', function (done) {
 
   // Ask
   inquirer.prompt(prompts)
-    .then(function (answers) {
+    .then(function(answers) {
       if (!answers.moveon) {
         return done();
       }
-      answers.appName = `start-${_.slugify(answers.customerId)}`;
+      answers.appName = _.slugify(answers.customerId);
 
       gulp.src(path.join(__dirname, 'templates', answers.type, '**', '*'))
         .pipe(template(answers, { interpolate: /<%=([\s\S]+?)%>/g }))
-        .pipe(rename(function (file) {
+        .pipe(rename(function(file) {
           if (file.basename[0] === '_') {
             file.basename = '.' + file.basename.slice(1);
           }
@@ -53,7 +53,7 @@ gulp.task('default', function (done) {
         .pipe(conflict('./'))
         .pipe(gulp.dest('./'))
         .pipe(install())
-        .on('end', function () {
+        .on('end', function() {
           done();
         });
     });
