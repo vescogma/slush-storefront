@@ -53,7 +53,7 @@
   "devDependencies": {
     "condition-circle": "^1.5.0",
     "cz-conventional-changelog": "^1.2.0",
-    "eslint": "^3.16.0",
+    "eslint": "^4.0.0",
     "eslint-config-tough": "^0.4.0",
     "re-start": "^1.8.6",
     "start-simple-cli": "^4.1.1"
