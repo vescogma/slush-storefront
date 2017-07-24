@@ -1,19 +1,38 @@
-import { searchandiser } from 'searchandiser-ui';
+import storefront from '@storefront/core';
 
-searchandiser({
+import '@storefront/structure';
+
+import '@storefront/did-you-mean';
+import '@storefront/related-queries';
+import '@storefront/query';
+import '@storefront/record-count';
+import '@storefront/paging';
+import '@storefront/sort';
+import '@storefront/collections';
+import '@storefront/template';
+import '@storefront/sayt';
+import '@storefront/navigation';
+import '@storefront/page-size';
+import '@storefront/products';
+import '@storefront/breadcrumbs';
+import '@storefront/details';
+
+new storefront({
   customerId: '<%= customerId %>',
-  // collection: 'default',
-  // area: 'Production',
+  area: '<%= area %>',
+  collection: '<%= collection %>',
 
   structure: {
-    title: 'title',
-    price: 'price'
+    id: '<%= id %>',
+    title: '<%= title %>'
 
     // define your data structure here!
-  },
-
-  // disable tracker to hide errors if not configured for client
-  services: { tracker: false }
+  }
 
   // put the rest of your configuration here!
 });
+
+// attach your tags here!
+
+storefront.mount('gb-query');
+storefront.mount('gb-products');

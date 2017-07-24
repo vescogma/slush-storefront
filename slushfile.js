@@ -27,6 +27,18 @@ gulp.task('default', function(done) {
     name: 'customerId',
     message: 'What is your customerId?'
   }, {
+    name: 'area',
+    message: 'What is your area?'
+  }, {
+    name: 'collection',
+    message: 'What is your collection?'
+  }, {
+    name: 'id',
+    message: 'What is your records\' id field?'
+  }, {
+    name: 'title',
+    message: 'What is your records\' title field?'
+  }, {
     type: 'confirm',
     name: 'moveon',
     message: 'Continue?'
