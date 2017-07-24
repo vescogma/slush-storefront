@@ -4,9 +4,7 @@
   "description": "Simple StoreFront implementation",
   "main": "storefront.js",
   "scripts": {
-    "serve": "webpack-dev-server --open --watch",
-    "start": "start-runner -p re-start/presets/es6",
-    "bundle": "npm start bundle"
+    "serve": "webpack-dev-server --open --watch"
   },
   "author": "",
   "license": "MIT",
