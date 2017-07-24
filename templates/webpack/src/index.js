@@ -1,4 +1,23 @@
-new searchandiser({
+import storefront from '@storefront/core';
+
+import '@storefront/structure';
+
+import '@storefront/did-you-mean';
+import '@storefront/related-queries';
+import '@storefront/query';
+import '@storefront/record-count';
+import '@storefront/paging';
+import '@storefront/sort';
+import '@storefront/collections';
+import '@storefront/template';
+import '@storefront/sayt';
+import '@storefront/navigation';
+import '@storefront/page-size';
+import '@storefront/products';
+import '@storefront/breadcrumbs';
+import '@storefront/details';
+
+new storefront({
   customerId: '<%= customerId %>',
   area: '<%= area %>',
   collection: '<%= collection %>',
@@ -15,5 +34,5 @@ new searchandiser({
 
 // attach your tags here!
 
-// searchandiser.mount('gb-query');
-// searchandiser.mount('gb-results');
+storefront.mount('gb-query');
+storefront.mount('gb-products');

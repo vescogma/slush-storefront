@@ -1,4 +1,4 @@
-new searchandiser({
+new storefront({
   customerId: '<%= customerId %>',
   area: '<%= area %>',
   collection: '<%= collection %>',
@@ -15,5 +15,5 @@ new searchandiser({
 
 // attach your tags here!
 
-// searchandiser.mount('gb-query');
-// searchandiser.mount('gb-results');
+storefront.mount('gb-query');
+storefront.mount('gb-products');
