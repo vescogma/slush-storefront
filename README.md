@@ -12,6 +12,12 @@
 
 ## Getting Started
 
+Install `slush` globally:
+
+```bash
+$ npm install -g slush
+```
+
 Install `slush-storefront` globally:
 
 ```bash
