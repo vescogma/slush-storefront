@@ -4,19 +4,13 @@
   <head>
     <meta charset="utf-8">
     <title>StoreFront</title>
-
-    <base href="/">
-    <link rel="stylesheet" href="${ require('./style/main.css') }">
+    <script src="http://cdn.groupbycloud.com/storefront-canary.js" charset="utf-8"></script>
   </head>
 
   <body>
+    <app></app>
 
-    <!-- Put your components here! -->
-
-    <gb-query></gb-query>
-
-    <gb-products></gb-products>
-
+    <script src="${ require('./tags/app.tag.html') }" type="riot/tag" charset="utf-8"></script>
   </body>
 
 </html>

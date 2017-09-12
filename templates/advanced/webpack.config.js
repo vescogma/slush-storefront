@@ -1,6 +1,8 @@
 const HTMLPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const indexHtml = path.resolve(__dirname, 'index.html');
+
 module.exports = {
   entry: './src/index',
 
@@ -11,7 +13,7 @@ module.exports = {
   },
 
   plugins: [
-    new HTMLPlugin({ template: 'index.html' })
+    new HTMLPlugin({ template: 'index.html' }),
   ],
 
   module: {
@@ -24,9 +26,23 @@ module.exports = {
       test: /\.js$/,
       loader: 'source-map-loader'
     }, {
-      test: path.resolve(__dirname, 'index.html'),
+      test: indexHtml,
       loader: 'html-loader',
       options: { interpolate: true }
+    }, {
+      test: /\.html$/,
+      exclude: indexHtml,
+      loader: 'html-loader'
+    }, {
+      test: /\.css$/,
+      include: [
+        /src\/tags/,
+        /node_modules/
+      ],
+      use: [
+        'to-string-loader',
+        'css-loader'
+      ]
     }, {
       test: /\.css$/,
       include: /styles/,

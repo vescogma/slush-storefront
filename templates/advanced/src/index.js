@@ -1,3 +1,8 @@
+import storefront from '@storefront/core';
+
+import './library';
+import './tags';
+
 new storefront({
   customerId: '<%= customerId %>',
   area: '<%= area %>',
@@ -15,5 +20,4 @@ new storefront({
 
 // attach your tags here!
 
-storefront.mount('gb-query');
-storefront.mount('gb-products');
+storefront.mount('app');

@@ -1,0 +1,42 @@
+{
+  "name": "storefront-<%= appName %>",
+  "private": true,
+  "description": "Simple StoreFront implementation",
+  "scripts": {
+    "start": "webpack-dev-server --open --watch"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.0",
+    "babel-preset-env": "^1.4.0",
+    "css-loader": "^0.28.4",
+    "extract-loader": "^0.1.0",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.28.0",
+    "source-map-loader": "^0.2.1",
+    "to-string-loader": "^1.1.5",
+    "webpack": "^2.5.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
+    "@storefront/breadcrumbs": "latest",
+    "@storefront/collections": "latest",
+    "@storefront/core": "latest",
+    "@storefront/details": "latest",
+    "@storefront/did-you-mean": "latest",
+    "@storefront/navigation": "latest",
+    "@storefront/page-size": "latest",
+    "@storefront/paging": "latest",
+    "@storefront/products": "latest",
+    "@storefront/query": "latest",
+    "@storefront/record-count": "latest",
+    "@storefront/related-queries": "latest",
+    "@storefront/sayt": "latest",
+    "@storefront/sort": "latest",
+    "@storefront/structure": "latest",
+    "@storefront/template": "latest"
+  }
+}
