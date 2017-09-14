@@ -6,26 +6,29 @@ const app = new storefront({
 
   structure: {
     id: '<%= id %>',
-    title: '<%= title %>'
+    title: '<%= title %>',
     price: '<%= price %>',
-    image: '<%= image-url %>',
+    image: '<%= imageurl %>',
 
   },
   search: {
     fields: ['*']
   },
   autocomplete: {
-      recommendations: {
-        suggestionCount: 4,
-        suggestionMode: 'popular'
-      },
+
+      //Uncomment for to use keyword recommendations
+      // recommendations: {
+      //   suggestionCount: 4,
+      //   suggestionMode: 'popular'
+      // },
+
       navigations: {
         // ADD Navigations Here
         // 'data.navigation.name': 'Customer Friendly Name',
 
       },
       products: {
-        count: 8
+        count: <%= prodCount %>
       }
     },
   services: {
@@ -39,13 +42,14 @@ const app = new storefront({
         // observer: true,
       }
     }
+    recommendations: <%= recommend %>
   },
   options: {
     stylish: false
   },
   tags: {
     sayt: {
-      recommendations: true
+      recommendations: <%= recommend %>
     }
   }
 });

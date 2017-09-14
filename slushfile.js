@@ -22,7 +22,7 @@ gulp.task('default', function(done) {
     name: 'type',
     type: 'list',
     message: 'What sort of StoreFront project would you like to create?',
-    choices: ['simple', 'webpack', 'advanced', 'SAYT only']
+    choices: ['simple', 'webpack', 'advanced', 'sayt']
   }, {
     name: 'customerId',
     message: 'What is your customerId?'
@@ -38,12 +38,34 @@ gulp.task('default', function(done) {
   }, {
     name: 'title',
     message: 'What is your records\' title field?'
+
   }, {
     name: 'price',
-    message: 'What is your records\' price field?'
+    message: 'What is your records\' price field?',
+    when: function(answers) {
+      return answers.type === 'sayt';
+    }
   }, {
-    name: 'image-url',
-    message: 'What is your records\' image url field?'
+    name: 'imageurl',
+    message: 'What is your records\' image url field?',
+    when: function(answers) {
+      return answers.type === 'sayt';
+    }
+  }, {
+    name: 'prodCount',
+    type: 'input',
+    message: 'How many products would you like to display?',
+    default: 0,
+    when: function(answers) {
+      return answers.type === 'sayt';
+    }
+  }, {
+    name: 'recommend',
+    type: 'confirm',
+    message: 'Would you like to turn on product recommendations?',
+    when: function(answers) {
+      return answers.type === 'sayt';
+    }
   }, {
     type: 'confirm',
     name: 'moveon',
