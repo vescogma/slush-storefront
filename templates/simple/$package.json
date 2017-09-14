@@ -3,11 +3,11 @@
   "private": true,
   "description": "Simple StoreFront implementation",
   "scripts": {
-    "start": "http-server . -o"
+    "start": "live-server --port=6500 --host=localhost"
   },
-  "author": "",
+  "author": "Groupby Inc.",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "0.9.0"
+    "live-server": "^1.2.0"
   }
 }

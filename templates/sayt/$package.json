@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "StoreFront SAYT implementation",
   "scripts": {
-    "start": "http-server ."
+    "start": "live-server --port=6400 --host=localhost"
   },
   "author": "Groupby Inc.",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "0.9.0"
+    "live-server": "^1.2.0"
   }
 }
