@@ -1,0 +1,13 @@
+{
+  "name": "SF-SAYT",
+  "version": "1.0.0",
+  "description": "StoreFront SAYT implementation",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "author": "Groupby Inc.",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "0.9.0"
+  }
+}

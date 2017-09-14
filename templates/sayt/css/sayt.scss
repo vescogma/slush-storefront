@@ -1,0 +1,256 @@
+@import 'reset';
+@import 'variables';
+
+.header-search {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+
+  flex-wrap: nowrap;
+  margin: 1.5rem 1rem;
+  // NOTE: keeps SAYT at full width of header-search
+  min-width: 1rem;
+  font-family: Helvetica, sans-serif;
+
+  &__box {
+    display: flex;
+    flex-grow: 2;
+
+    &__input {
+      margin: 0;
+      border: 1px solid $gry-mid;
+      border-right: 0;
+      padding: .5rem 1rem;
+      width: 100%;
+      height: 2.5rem;
+      text-align: left;
+      font-size: 1rem;
+    }
+  }
+}
+
+.header-search__submit {
+  display: flex;
+  align-items: center;
+  border: 1px solid $gry-dark;
+  background: $tertiary;
+  cursor: pointer;
+  width: 8rem;
+  white-space: nowrap;
+  color: $gry-dark;
+
+  gb-link {
+    display: block;
+    width: 100%;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+
+
+.header-search__sayt {
+  position: absolute;
+  top: 3.75rem;
+  left: 0;
+  z-index: 15;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+  background: $bckgrnd;
+  width: 100%;
+
+  div {
+    display: flex;
+  //   width: 100%;
+  }
+
+  gb-sayt-autocomplete {
+    display: block;
+    background-color: $gry-light;
+    padding: 0;
+    width: 20rem;
+
+    h4 {
+      background: $gry-mid;
+      padding: .75rem;
+      font-weight: bold;
+      color: $gry-light;
+    }
+
+    a {
+      display: block;
+      padding: .75rem;
+      line-height: 1.1rem;
+      color: $gry-dark;
+
+      &:hover {
+        background: $tertiary;
+        color: $gry-dark;
+      }
+    }
+
+    .gb-trending {
+      a {
+        background: $secondary;
+        gb-raw{
+          &::before {
+            content: '\2191';
+            font-size: .8em;
+            padding-right: .5rem;
+          }
+        }
+      }
+    }
+
+    b {
+      font-weight: bold;
+    }
+  }
+
+
+  gb-sayt-products {
+    flex-grow: 2;
+    background: $bckgrnd;
+    width: 100%;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    li {
+      width: 25%;
+    }
+  }
+}
+
+gb-recommendations {
+  h4 {
+    padding: 1rem;
+    background: $gry-mid;
+    color: $gry-light;
+  }
+}
+
+.gb-product-card, gb-simple-product-card {
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+
+  &>a {
+    align-self: center;
+    text-decoration: none;
+  }
+
+  &__image {
+
+    width: 10rem;
+    height: 10rem;
+    object-fit: scale-down;
+    font-family: 'Helvetica';
+    font-weight: 300;
+    line-height: 2;
+    text-align: center;
+    background: $gry-light;
+    border: 1px solid $gry-mid;
+    height: auto;
+    display: block;
+    position: relative;
+    color: $gry-mid;
+
+    &::after {
+      content: "We're sorry, this image is broken :(";
+      display: block;
+      padding: 2rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+
+    &__title {
+      display: flex;
+      flex-grow: 2;
+
+      a {
+        display: block;
+        text-decoration: none;
+        line-height: 1.3rem;
+        color: $gry-dark;
+
+      }
+    }
+
+    &__price {
+      display: flex;
+      padding: .5rem 0;
+      color: $tertiary;
+      font-weight: 900;
+
+      &::before {
+        content: '$';
+      }
+    }
+
+    &__stock {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 64rem) {
+  .header-search__sayt {
+    gb-sayt-products {
+      li {
+        width: 33%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 48rem) {
+  .header-search__sayt {
+    gb-sayt-products {
+      li {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 39rem) {
+  .header-search__sayt {
+    gb-sayt-products {
+      li {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 30rem) {
+  .header-search__sayt {
+    div {
+      flex-direction: column;
+    }
+
+    gb-sayt-autocomplete {
+      flex: 0 0 100%;
+      width: 100%;
+    }
+
+    gb-sayt-products {
+      display: none;
+    }
+  }
+}

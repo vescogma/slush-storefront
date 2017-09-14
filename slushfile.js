@@ -22,7 +22,7 @@ gulp.task('default', function(done) {
     name: 'type',
     type: 'list',
     message: 'What sort of StoreFront project would you like to create?',
-    choices: ['simple', 'webpack']
+    choices: ['simple', 'webpack', 'advanced', 'SAYT only']
   }, {
     name: 'customerId',
     message: 'What is your customerId?'
@@ -38,6 +38,12 @@ gulp.task('default', function(done) {
   }, {
     name: 'title',
     message: 'What is your records\' title field?'
+  }, {
+    name: 'price',
+    message: 'What is your records\' price field?'
+  }, {
+    name: 'image-url',
+    message: 'What is your records\' image url field?'
   }, {
     type: 'confirm',
     name: 'moveon',

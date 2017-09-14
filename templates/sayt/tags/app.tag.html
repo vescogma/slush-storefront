@@ -1,0 +1,49 @@
+<app>
+  <gb-container>
+    <gb-query>
+      <div class="header-search">
+        <gb-search-box class="header-search__box">
+          <input class="header-search__box__input" onClick="{ state.onClick }" ref="searchBox" type="text" placeholder="What can we help you find today?" onkeydown="{ state.onKeyDown }" onkeypress="{ state.onKeyDown }" onkeyup="{ state.onKeyUp }" value="{ state.originalQuery }" autofocus>
+        </gb-search-box>
+        <gb-submit class="header-search__submit">
+          <gb-link on-click="{ $submit.onClick }">
+            <span class="header-search__submit__text">Search</span>
+            <img class="header-search__submit__icon" src="img/search-icon.svg" alt="Search Icon" />
+          </gb-link>
+        </gb-submit>
+        <gb-sayt class="header-search__sayt" if="{ props.showSayt }" >
+            <gb-sayt-autocomplete if="{ !$sayt.showRecommendations }" labels="{ props.labels }"></gb-sayt-autocomplete>
+            <gb-sayt-products if="{ $sayt.showProducts}">
+              <gb-template target="SAYT-Banner"></gb-template>
+              <gb-list items="{ $saytProducts.products }">
+                <gb-product product="{ $item }">
+                  <div class="gb-product-card">
+                    <a href="#" onclick="{ $product.onClick }"><img riot-src="{ $product.data.image }" alt="" class="gb-product-card__image"></a>
+                    <div class="gb-product-card__content">
+                      <span class="gb-product-card__content__title"><a href="#" onclick="{ $product.onClick }"><gb-raw content="{ $product.data.title }"></gb-raw></a></span>
+                      <div class="gb-product-card__content__inventory"></div>
+                    </div>
+                  </div>
+                </gb-product>
+              </gb-list>
+              <gb-recommendations if="{ $saytProducts.products == 0}">
+                <h4>Popular Products</h4>
+                <gb-list items="{ $recommendations.products }">
+                  <gb-product product="{ $item }">
+                    <div class="gb-product-card">
+                      <a href="#" onclick="{ $product.onClick }"><img riot-src="{ $product.data.image }" alt="" class="gb-product-card__image"></a>
+                      <div class="gb-product-card__content">
+                        <span class="gb-product-card__content__title"><a href="#" onclick="{ $product.onClick }"><gb-raw content="{ $product.data.title }"></gb-raw></a></span>
+                        <div class="gb-product-card__content__inventory"></div>
+                      </div>
+                    </div>
+                  </gb-product>
+                </gb-list>
+              </gb-recommendations>
+            </gb-sayt-products>
+
+        </gb-sayt>
+      </div>
+    </gb-query>
+  </gb-container>
+</app>
