@@ -55,7 +55,7 @@ gulp.task('default', function(done) {
     name: 'prodCount',
     type: 'input',
     message: 'How many products would you like to display?',
-    default: 0,
+    default: 8,
     when: function(answers) {
       return answers.type === 'sayt';
     }
