@@ -1,5 +1,6 @@
+storefront.polyfill(() => {
 
-const app = new storefront({
+  var app = new storefront({
   customerId: '<%= customerId %>',
   area: '<%= area %>',
   collection: '<%= collection %>',
@@ -31,28 +32,28 @@ const app = new storefront({
         count: <%= prodCount %>
       }
     },
-  services: {
-    logging: {
-      level: 'debug',
-      debug: {
-        // tracker: true,
-        // flux: true,
-        // lifecycle: true,
-        // aliasing: true,
-        // observer: true,
+    services: {
+      logging: {
+        level: 'debug',
+        debug: {
+          // tracker: true,
+          // flux: true,
+          // lifecycle: true,
+          // aliasing: true,
+          // observer: true,
+        }
+      }
+      recommendations: <%= recommend %>
+    },
+    options: {
+      stylish: false
+    },
+    tags: {
+      sayt: {
+        recommendations: <%= recommend %>
       }
     }
-    recommendations: <%= recommend %>
-  },
-  options: {
-    stylish: false
-  },
-  tags: {
-    sayt: {
-      recommendations: <%= recommend %>
-    }
-  }
+  });
+
+  app.mount('app');
 });
-
-
-storefront.mount('app');

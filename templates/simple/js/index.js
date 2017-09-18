@@ -1,18 +1,22 @@
-new storefront({
-  customerId: '<%= customerId %>',
-  area: '<%= area %>',
-  collection: '<%= collection %>',
+storefront.polyfill(() => {
 
-  structure: {
-    id: '<%= id %>',
-    title: '<%= title %>'
+  var app = new storefront({
+    customerId: '<%= customerId %>',
+    area: '<%= area %>',
+    collection: '<%= collection %>',
 
-    // define your data structure here!
-  }
+    structure: {
+      id: '<%= id %>',
+      title: '<%= title %>'
 
-  // put the rest of your configuration here!
+      // define your data structure here!
+    }
+
+    // put the rest of your configuration here!
+  });
+
+  // attach your tags here!
+
+  app.mount('app');
+
 });
-
-// attach your tags here!
-
-storefront.mount('app');
