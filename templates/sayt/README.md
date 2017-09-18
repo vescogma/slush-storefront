@@ -16,7 +16,7 @@ npm start
 yarn start
 ```
 
-Visit the [running server](http://localhost:8080).
+Visit the [running server](http://localhost:6400).
 
 ### Developing
 
@@ -35,7 +35,7 @@ npm install -g sass
 Navigate to the `css` folder and run the following
 
 ```js
-sass --watch sayt.scss:sayt.css 
+sass --watch sayt.scss:sayt.css
 ```
 
 Refresh the page and your changes will be viewable
