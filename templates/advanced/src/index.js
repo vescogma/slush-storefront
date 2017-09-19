@@ -1,3 +1,4 @@
+import '../css/main.scss';
 import storefront from '@storefront/core';
 
 import './library';
@@ -29,7 +30,8 @@ const app = new storefront({
     },
     products: {
       count: <%= autocompleteProductCount %>
-    }
+    },
+    recommendations: false
   },
 
   services: {
@@ -42,7 +44,8 @@ const app = new storefront({
         // aliasing: true,
         // observer: true,
       }
-    }
+    },
+    recommendations: false
   }
 
   // put the rest of your configuration here!

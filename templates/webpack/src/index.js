@@ -1,3 +1,5 @@
+import '../css/main.scss';
+
 const app = new storefront({
   customerId: '<%= customerId %>',
   area: '<%= area %>',
@@ -24,7 +26,8 @@ const app = new storefront({
     },
     products: {
       count: <%= autocompleteProductCount %>
-    }
+    },
+    recommendations: false
   },
 
   services: {
@@ -37,7 +40,8 @@ const app = new storefront({
         // aliasing: true,
         // observer: true,
       }
-    }
+    },
+    recommendations: false
   }
 
   // put the rest of your configuration here!

@@ -6,7 +6,7 @@ const path = require('path');
 const indexHtml = path.resolve(__dirname, 'index.html');
 
 module.exports = {
-  entry: './src/index',
+  entry: './src',
 
   devtool: 'source-map',
 
@@ -15,12 +15,12 @@ module.exports = {
   },
 
   plugins: [
-    new HTMLPlugin({ template: 'index.html' }),
+    new HTMLPlugin({ template: indexHtml }),
     new ExtractTextPlugin('styles.css'),
     new BrowserSyncPlugin({
         host: 'localhost',
-        port: 3000,
-        proxy: 'http://localhost:3100/'
+        port: 6400,
+        proxy: 'http://localhost:6500/'
       },
       { reload: false })
   ],
@@ -53,18 +53,19 @@ module.exports = {
         'css-loader'
       ]
     }, {
-      test: /\.css$/,
-      include: /styles/,
-      loaders: [
-        { loader: 'file-loader', options: { outputPath: 'public/' } },
-        'extract-loader',
-        'css-loader'
-      ]
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+        use: [
+          'css-loader',
+          'sass-loader'
+        ],
+        fallback: 'style-loader'
+      })
     }]
   },
 
   devServer: {
-    port: 6400,
+    port: 6500,
     overlay: true,
     historyApiFallback: true
   }

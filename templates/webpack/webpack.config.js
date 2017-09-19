@@ -3,8 +3,10 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const indexHtml = path.resolve(__dirname, 'index.html');
+
 module.exports = {
-  entry: './src/index',
+  entry: './src',
 
   devtool: 'source-map',
 
@@ -13,12 +15,12 @@ module.exports = {
   },
 
   plugins: [
-    new HTMLPlugin({ template: 'index.html' }),
+    new HTMLPlugin({ template: indexHtml }),
     new ExtractTextPlugin('styles.css'),
     new BrowserSyncPlugin({
         host: 'localhost',
-        port: 3000,
-        proxy: 'http://localhost:3100/'
+        port: 6400,
+        proxy: 'http://localhost:6500/'
       },
       { reload: false })
   ],
@@ -33,29 +35,26 @@ module.exports = {
       test: /\.js$/,
       loader: 'source-map-loader'
     }, {
-      test: path.resolve(__dirname, 'index.html'),
+      test: /\.tag\.html$/,
+      loader: 'file-loader'
+    }, {
+      test: indexHtml,
       loader: 'html-loader',
       options: { interpolate: true }
     }, {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
-        use: [{
-          loader: 'css-loader',
-          options: { sourceMap: true }
-        }, {
-          loader: 'postcss-loader',
-          options: { sourceMap: true, plugins: (loader) => [require('autoprefixer')()] }
-        }, {
-          loader: 'sass-loader',
-          options: { sourceMap: true }
-        }],
+        use: [
+          'css-loader',
+          'sass-loader'
+        ],
         fallback: 'style-loader'
       })
     }]
   },
 
   devServer: {
-    port: 6400,
+    port: 6500,
     overlay: true,
     historyApiFallback: true
   }

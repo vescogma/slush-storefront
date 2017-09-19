@@ -26,7 +26,8 @@ storefront.polyfill(function() {
       },
       products: {
         count: <%= autocompleteProductCount %>
-      }
+      },
+      recommendations: false
     },
 
     services: {
@@ -39,7 +40,8 @@ storefront.polyfill(function() {
           // aliasing: true,
           // observer: true,
         }
-      }
+      },
+      recommendations: false
     }
 
     // put the rest of your configuration here!

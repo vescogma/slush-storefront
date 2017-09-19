@@ -20,11 +20,10 @@ storefront.polyfill(function() {
 
     autocomplete: {
 
-      //Uncomment for to use keyword recommendations
-      // recommendations: {
-      //   suggestionCount: 4,
-      //   suggestionMode: 'popular'
-      // },
+      recommendations: <%= recommendations ? {
+        suggestionCount: 4,
+        suggestionMode: 'popular'
+      } : false %>,
 
       navigations: {
         // ADD Navigations Here

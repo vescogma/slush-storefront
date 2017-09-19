@@ -29,10 +29,12 @@ gulp.task('default', function(done) {
       message: 'What is your customerId?'
     }, {
       name: 'area',
-      message: 'What is your area?'
+      message: 'What is your area?',
+      default: 'Production'
     }, {
       name: 'collection',
-      message: 'What is your collection?'
+      message: 'What is your collection?',
+      default: 'default'
     }, {
       name: 'structure',
       type: 'confirm',
@@ -91,6 +93,11 @@ gulp.task('default', function(done) {
     }
     answers.appName = _.slugify(answers.customerId);
 
+    answers.id = answers.id || 'id';
+    answers.title = answers.title || 'title';
+    answers.price = answers.price || 'price';
+    answers.imageurl = answers.imageurl || 'image';
+
     var isSimple = answers.type === 'simple' || answers.type === 'sayt';
     var sources = [
       path.join(__dirname, 'templates/_includes/dotfiles/*'),
@@ -98,20 +105,24 @@ gulp.task('default', function(done) {
     ];
     if (isSimple) {
       sources.push(path.join(__dirname, 'templates/_includes/simple/*'));
-    } else {
-      sources.push(path.join(__dirname, 'templates/_includes/babel/*'));
     }
     sources.push(path.join(__dirname, 'templates', answers.type, '**/*'));
 
-    gulp.src(sources).pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g})).pipe(rename(function(file) {
-      if (file.basename[0] === '_') {
-        file.basename = '.' + file.basename.slice(1);
-      }
-      if (file.basename[0] === '$') {
-        file.basename = file.basename.slice(1);
-      }
-    })).pipe(conflict('./')).pipe(gulp.dest('./')).pipe(install()).on('end', function() {
-      done();
-    });
+    gulp.src(sources)
+      .pipe(template(answers, { interpolate: /<%=([\s\S]+?)%>/g }))
+      .pipe(rename(function(file) {
+        if (file.basename[0] === '_') {
+          file.basename = '.' + file.basename.slice(1);
+        }
+        if (file.basename[0] === '$') {
+          file.basename = file.basename.slice(1);
+        }
+      }))
+      // .pipe(conflict('./'))
+      .pipe(gulp.dest('./'))
+      .pipe(install())
+      .on('end', function() {
+        done();
+      });
   });
 });

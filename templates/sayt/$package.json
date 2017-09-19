@@ -3,13 +3,14 @@
   "private": true,
   "description": "StoreFront SAYT implementation",
   "scripts": {
+    "prepare": "node-sass css/main.scss css/main.css",
     "start": "live-server --port=6400 --host=localhost",
-    "sass": "sass --watch css/main.scss:css/main.css"
+    "sass": "node-sass --watch css/main.scss css/main.css"
   },
   "author": "Groupby Inc.",
   "license": "MIT",
   "devDependencies": {
     "live-server": "^1.2.0",
-    "sass": "^1.0.0-beta.2"
+    "node-sass": "^4.5.3"
   }
 }
