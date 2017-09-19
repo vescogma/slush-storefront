@@ -3,20 +3,14 @@
 
   <head>
     <meta charset="utf-8">
-    <title>StoreFront</title>
+    <title><%= customerId %> - StoreFront</title>
 
     <base href="/">
-    <link rel="stylesheet" href="${ require('./style/main.css') }">
+    <link rel="stylesheet" href="${ require('./css/main.scss') }">
   </head>
 
   <body>
-
-    <!-- Put your components here! -->
-
-    <gb-query></gb-query>
-
-    <gb-products></gb-products>
-
+    <app class="app-wrapper"></app>
   </body>
 
 </html>

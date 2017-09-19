@@ -1,4 +1,4 @@
-storefront.polyfill(() => {
+storefront.polyfill(function() {
 
   var app = new storefront({
     customerId: '<%= customerId %>',
@@ -7,15 +7,46 @@ storefront.polyfill(() => {
 
     structure: {
       id: '<%= id %>',
-      title: '<%= title %>'
+      title: '<%= title %>',
+      price: '<%= price %>',
+      image: '<%= imageurl %>'
 
-      // define your data structure here!
+      // define your data structure field mapping here!
+    },
+
+    search: {
+      fields: ['*']
+    },
+
+    autocomplete: {
+      navigations: {
+        // ADD Navigations Here
+        // 'data.navigation.name': 'Customer Friendly Name',
+
+      },
+      products: {
+        count: <%= autocompleteProductCount %>
+      }
+    },
+
+    services: {
+      logging: {
+        level: 'debug',
+        debug: {
+          // tracker: true,
+          // flux: true,
+          // lifecycle: true,
+          // aliasing: true,
+          // observer: true,
+        }
+      }
     }
 
     // put the rest of your configuration here!
   });
 
-  // attach your tags here!
+  // attach your top-level components here!
+  // components nested under <app> will be mounted automatically
 
   app.mount('app');
 

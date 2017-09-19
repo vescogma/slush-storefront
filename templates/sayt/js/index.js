@@ -1,21 +1,24 @@
-storefront.polyfill(() => {
+storefront.polyfill(function() {
 
   var app = new storefront({
-  customerId: '<%= customerId %>',
-  area: '<%= area %>',
-  collection: '<%= collection %>',
+    customerId: '<%= customerId %>',
+    area: '<%= area %>',
+    collection: '<%= collection %>',
 
-  structure: {
-    id: '<%= id %>',
-    title: '<%= title %>',
-    price: '<%= price %>',
-    image: '<%= imageurl %>',
+    structure: {
+      id: '<%= id %>',
+      title: '<%= title %>',
+      price: '<%= price %>',
+      image: '<%= imageurl %>'
 
-  },
-  search: {
-    fields: ['*']
-  },
-  autocomplete: {
+      // define your data structure field mapping here!
+    },
+
+    search: {
+      fields: ['*']
+    },
+
+    autocomplete: {
 
       //Uncomment for to use keyword recommendations
       // recommendations: {
@@ -29,9 +32,10 @@ storefront.polyfill(() => {
 
       },
       products: {
-        count: <%= prodCount %>
+        count: <%= autocompleteProductCount %>
       }
     },
+
     services: {
       logging: {
         level: 'debug',
@@ -42,18 +46,23 @@ storefront.polyfill(() => {
           // aliasing: true,
           // observer: true,
         }
-      }
-      recommendations: <%= recommend %>
+      },
+      recommendations: <%= recommendations %>
     },
+
     options: {
       stylish: false
     },
+
     tags: {
       sayt: {
-        recommendations: <%= recommend %>
+        recommendations: <%= recommendations %>
       }
     }
   });
+
+  // attach your top-level components here!
+  // components nested under <app> will be mounted automatically
 
   app.mount('app');
 });

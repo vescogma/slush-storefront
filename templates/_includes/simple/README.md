@@ -24,18 +24,12 @@ Your `storefront` configuration can be found in the `js/index.js` file. Feel fre
 
 #### Styles
 
-Styles are built out using [BEM](http://getbem.com) and [Sass](http://sass-lang.com/). Make style alterations in sayt.scss and variables.scss. To compile changes to css:
-
-If you don't have sass installed globally (if you do continue to next step)
+Styles are built out using [BEM](http://getbem.com) and [Sass](http://sass-lang.com/). Make style alterations in `main.scss` and `variables.scss`. To compile changes to css:
 
 ```js
-npm install -g sass
-```
-
-Navigate to the `css` folder and run the following
-
-```js
-sass --watch sayt.scss:sayt.css
+npm run sass
+// or
+yarn sass
 ```
 
 Refresh the page and your changes will be viewable

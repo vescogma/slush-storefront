@@ -1,3 +1,5 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -14,6 +16,13 @@ module.exports = {
 
   plugins: [
     new HTMLPlugin({ template: 'index.html' }),
+    new ExtractTextPlugin('styles.css'),
+    new BrowserSyncPlugin({
+        host: 'localhost',
+        port: 3000,
+        proxy: 'http://localhost:3100/'
+      },
+      { reload: false })
   ],
 
   module: {
@@ -55,7 +64,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 8080,
+    port: 6400,
     overlay: true,
     historyApiFallback: true
   }

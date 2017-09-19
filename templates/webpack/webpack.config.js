@@ -1,3 +1,5 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -11,7 +13,14 @@ module.exports = {
   },
 
   plugins: [
-    new HTMLPlugin({ template: 'index.html' })
+    new HTMLPlugin({ template: 'index.html' }),
+    new ExtractTextPlugin('styles.css'),
+    new BrowserSyncPlugin({
+        host: 'localhost',
+        port: 3000,
+        proxy: 'http://localhost:3100/'
+      },
+      { reload: false })
   ],
 
   module: {
@@ -28,18 +37,25 @@ module.exports = {
       loader: 'html-loader',
       options: { interpolate: true }
     }, {
-      test: /\.css$/,
-      include: /styles/,
-      loaders: [
-        { loader: 'file-loader', options: { outputPath: 'public/' } },
-        'extract-loader',
-        'css-loader'
-      ]
+      test: /\.scss$/,
+      use: ExtractTextPlugin.extract({
+        use: [{
+          loader: 'css-loader',
+          options: { sourceMap: true }
+        }, {
+          loader: 'postcss-loader',
+          options: { sourceMap: true, plugins: (loader) => [require('autoprefixer')()] }
+        }, {
+          loader: 'sass-loader',
+          options: { sourceMap: true }
+        }],
+        fallback: 'style-loader'
+      })
     }]
   },
 
   devServer: {
-    port: 8080,
+    port: 6400,
     overlay: true,
     historyApiFallback: true
   }

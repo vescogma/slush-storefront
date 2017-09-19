@@ -3,12 +3,15 @@
 
   <head>
     <meta charset="utf-8">
-    <title>StoreFront</title>
+    <title><%= customerId %> - StoreFront</title>
+
+    <base href="/">
     <script src="http://cdn.groupbycloud.com/storefront-canary.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="${ require('./css/main.scss') }">
   </head>
 
   <body>
-    <app></app>
+    <app class="app-wrapper"></app>
 
     <script src="${ require('./tags/app.tag.html') }" type="riot/tag" charset="utf-8"></script>
   </body>

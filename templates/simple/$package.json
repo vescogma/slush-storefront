@@ -1,13 +1,15 @@
 {
   "name": "storefront-<%= appName %>",
   "private": true,
-  "description": "Simple StoreFront implementation",
+  "description": "StoreFront simple implementation",
   "scripts": {
-    "start": "live-server --port=6500 --host=localhost"
+    "start": "live-server --port=6400 --host=localhost",
+    "sass": "sass --watch css/main.scss:css/main.css"
   },
   "author": "Groupby Inc.",
   "license": "MIT",
   "devDependencies": {
-    "live-server": "^1.2.0"
+    "live-server": "^1.2.0",
+    "sass": "^1.0.0-beta.2"
   }
 }
