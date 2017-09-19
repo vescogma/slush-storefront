@@ -35,12 +35,23 @@ module.exports = {
       test: /\.js$/,
       loader: 'source-map-loader'
     }, {
-      test: /\.tag\.html$/,
-      loader: 'file-loader'
-    }, {
       test: indexHtml,
       loader: 'html-loader',
       options: { interpolate: true }
+    }, {
+      test: /\.html$/,
+      exclude: indexHtml,
+      loader: 'html-loader'
+    }, {
+      test: /\.css$/,
+      include: [
+        /src\/tags/,
+        /node_modules/
+      ],
+      use: [
+        'to-string-loader',
+        'css-loader'
+      ]
     }, {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({

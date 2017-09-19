@@ -3,13 +3,16 @@
   "description": "Slush generator for StoreFront projects",
   "version": "0.0.0-development",
   "homepage": "https://github.com/groupby/slush-storefront",
-  "author": [{
-    "name": "Ben Teichman",
-    "email": "ben.teichman@groupbyinc.com"
-  }, {
-    "name": "Victoria Johns",
-    "email": "victoria.johns@groupbyinc.com"
-  }],
+  "author": [
+    {
+      "name": "Ben Teichman",
+      "email": "ben.teichman@groupbyinc.com"
+    },
+    {
+      "name": "Victoria Johns",
+      "email": "victoria.johns@groupbyinc.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/groupby/slush-storefront.git"

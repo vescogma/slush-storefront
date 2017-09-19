@@ -1,0 +1,16 @@
+import '@storefront/breadcrumbs';
+import '@storefront/collections';
+import '@storefront/details';
+import '@storefront/did-you-mean';
+import '@storefront/navigation';
+import '@storefront/page-size';
+import '@storefront/paging';
+import '@storefront/products';
+import '@storefront/query';
+import '@storefront/recommendations';
+import '@storefront/record-count';
+import '@storefront/related-queries';
+import '@storefront/sayt';
+import '@storefront/sort';
+import '@storefront/structure';
+import '@storefront/template';

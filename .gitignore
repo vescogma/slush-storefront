@@ -1,4 +1,7 @@
 node_modules/
 temp
+package-lock.json
 *.log
+*.css
 .idea
+.sass-cache/

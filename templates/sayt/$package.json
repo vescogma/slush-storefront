@@ -1,7 +1,7 @@
 {
-  "name": "storefront-<%= appName %>",
+  "name": "storefront-<%= appName %>-sayt",
   "private": true,
-  "description": "StoreFront simple implementation",
+  "description": "StoreFront SAYT implementation",
   "scripts": {
     "prepare": "node-sass css/main.scss css/main.css",
     "start": "live-server --port=6400 --host=localhost",
