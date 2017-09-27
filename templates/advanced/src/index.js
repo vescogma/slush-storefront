@@ -2,7 +2,7 @@ import '../css/main.scss';
 import storefront from '@storefront/core';
 
 import './library';
-import './tags';
+import './tags/app';
 
 const app = new storefront({
   customerId: '<%= customerId %>',
